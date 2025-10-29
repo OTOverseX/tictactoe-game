@@ -29,13 +29,11 @@ const gameBoard = (() => {
 
     const availableCell = board[row][column];
 
-    if (!availableCell.getValue()){
-      availableCell.addToken(player);
-    }else{
-      return
-    }
-  }
+    if (availableCell.getValue() !== "") return;
 
+    availableCell.addToken(player)
+  }
+ 
   const printBoard = () => {
       const boardWithCellValue = board.map((row) => row.map((cell) => cell.getValue()));
       console.log(boardWithCellValue);
@@ -147,3 +145,4 @@ const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") =>
 
 })();
 
+console.log(gamePlay.checkWinning());
