@@ -142,8 +142,8 @@ const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") =>
 
   printNewBoard();
 
-  return {playRound, getActivePlayer };
+  return {playRound, getActivePlayer};
 
 
-})()
+})();
 

@@ -1,1 +1,10 @@
-button{padding: 20px;}
+body{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before
+{
+    box-sizing: inherit;
+}
+
+button{padding: 20px; width: 50px;}
