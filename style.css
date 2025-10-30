@@ -7,4 +7,94 @@ body{
     box-sizing: inherit;
 }
 
-button{padding: 20px; width: 50px;}
+.cell{padding: 20px; width: 50px;}
+
+.playerInfo{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    max-height: 80vh;
+
+}
+
+.playerInfo.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.overlay{
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    transition: 200ms ease-in-out;
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.info-container{
+    padding:40px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+form .info{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    font-size: 24px;
+}
+
+form input
+{
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Oswald", sans-serif;
+}
+
+form input:focus
+{
+    box-shadow: 0 0 6px #4a90e2;
+    border-color: #4a90e2;
+}
+
+.button
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button button
+{
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    background-color:  #0284C7;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Oswald", sans-serif;
+}

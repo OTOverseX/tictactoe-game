@@ -7,26 +7,55 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="container">
+    <div class="playerInfo" id="playerInfo">
+      <div class="info-container">
+        <form action="">
+          <div class="info">
+            <label for="">Player 1</label>
+            <input type="text" name="player1">
+          </div>
 
-  <div class="roundBoard" id="test"></div>
-  <div id="board">
-    <div class="firstrow">
-      <button class="cell" data-row="0" data-column="0" value=""></button>
-      <button class="cell" data-row="0" data-column="1" value=""></button>
-      <button class="cell" data-row="0" data-column="2" value=""></button>
-    </div>
-    
-    <div class="secondrow">
-      <button class="cell" data-row="1" data-column="0" value=""></button>
-      <button class="cell" data-row="1" data-column="1" value=""></button>
-      <button class="cell" data-row="1" data-column="2" value=""></button>
+          <div class="info">
+            <label for="">Player 2</label>
+            <input type="text" name="player2">
+          </div>
+          <div class="button">
+            <button data-close-button class="submit">Submit</button>
+            <button data-close-button class="reset">Reset</button>
+          </div>
+          
+        </form>
+      </div>
     </div>
 
-    <div class="thirdrow">
-      <button class="cell" data-row="2" data-column="0" value=""></button>
-      <button class="cell" data-row="2" data-column="1" value=""></button>
-      <button class="cell" data-row="2" data-column="2" value=""></button>
+    <div class="gameBody">
+      <button data-modal-target="#playerInfo" class="start ">Start Game</button>
+      <header>TIC TAC TOE</header>
+      <div class="roundBoard" id="test"></div>
+      <div id="board">
+        <div class="firstrow">
+          <button class="cell" data-row="0" data-column="0" value=""></button>
+          <button class="cell" data-row="0" data-column="1" value=""></button>
+          <button class="cell" data-row="0" data-column="2" value=""></button>
+        </div>
+        
+        <div class="secondrow">
+          <button class="cell" data-row="1" data-column="0" value=""></button>
+          <button class="cell" data-row="1" data-column="1" value=""></button>
+          <button class="cell" data-row="1" data-column="2" value=""></button>
+        </div>
+
+        <div class="thirdrow">
+          <button class="cell" data-row="2" data-column="0" value=""></button>
+          <button class="cell" data-row="2" data-column="1" value=""></button>
+          <button class="cell" data-row="2" data-column="2" value=""></button>
+        </div>
+      </div>
+      
+      <div class="winning"></div>
     </div>
+    <div id="overlay" class="overlay"></div>
   </div>
   <script src="script.js"></script>
   <script src="display.js"></script>

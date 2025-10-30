@@ -79,6 +79,10 @@ const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") =>
   const printBoard = () => {
     gameBoard.printBoard();
   }
+
+  const getFlatBoard = () => {
+    return gameBoard.getBoard().flat();
+  }
   
   const checkWinning = () => {
     const board = gameBoard.getBoard();
@@ -140,9 +144,8 @@ const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") =>
 
   printNewBoard();
 
-  return {playRound, getActivePlayer};
+  return {playRound, getActivePlayer, checkWinning, getFlatBoard};
 
 
 })();
 
-console.log(gamePlay.checkWinning());
