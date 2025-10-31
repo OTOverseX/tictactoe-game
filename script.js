@@ -40,15 +40,26 @@ const gameBoard = (() => {
     }
 
   const getBoard = () => board.map((row) => row.map((cell) => cell.getValue()));
-  return {pasteToken, printBoard, getBoard};
+
+  const clearBoard = () => {
+    for (let i = 0; i < rows; i++){
+      for(let j = 0; j < columns; j++){
+        board[i][j] = Cell();
+      }
+    }
+  };
+  
+  return {pasteToken, printBoard, getBoard, clearBoard};
+
+  
 })();
 
 
 
 
 
-const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") => {
-
+const gamePlay = ((firstPlayerName = "", secondPlayerName = "") => {
+  
   const players = [
     {
       "name" : firstPlayerName,
@@ -64,12 +75,20 @@ const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") =>
   ]
 
   let activePlayer = players[0];
+  
+  const setPlayerNames = (first, second) => {
+    players[0].name = first;
+    players[1].name = second;
+  }
 
+  
   const changePlayerTurn = () => {
     activePlayer =  activePlayer === players[0] ? players[1] : players[0];
   }
 
   const getActivePlayer = () => activePlayer;
+
+  
 
   const printNewBoard = () => {
     gameBoard.printBoard();
@@ -140,11 +159,14 @@ const gamePlay = ((firstPlayerName = "Player1", secondPlayerName = "Player2") =>
     }
     
   }
-
+const resetGameBoard = () => {
+  gameBoard.clearBoard();
+  activePlayer = players[0];
+}
 
   printNewBoard();
 
-  return {playRound, getActivePlayer, checkWinning, getFlatBoard};
+  return {resetGameBoard,setPlayerNames,playRound, getActivePlayer, checkWinning, getFlatBoard};
 
 
 })();

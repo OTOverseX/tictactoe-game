@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tic Tac Toe Game</title>
   <link rel="stylesheet" href="style.css">
-</head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  </head>
 <body>
   <div id="container">
     <div class="playerInfo" id="playerInfo">
@@ -21,7 +24,7 @@
             <input type="text" name="player2">
           </div>
           <div class="button">
-            <button data-close-button class="submit">Submit</button>
+            <button data-close-button class="submit">Start Game</button>
             <button data-close-button class="reset">Reset</button>
           </div>
           
@@ -29,31 +32,44 @@
       </div>
     </div>
 
-    <div class="gameBody">
-      <button data-modal-target="#playerInfo" class="start ">Start Game</button>
-      <header>TIC TAC TOE</header>
-      <div class="roundBoard" id="test"></div>
-      <div id="board">
-        <div class="firstrow">
-          <button class="cell" data-row="0" data-column="0" value=""></button>
-          <button class="cell" data-row="0" data-column="1" value=""></button>
-          <button class="cell" data-row="0" data-column="2" value=""></button>
+    <div class="wrapper">
+      <div class="boxDisplay playerOneDisplay">
+        <div class="playerOneName">Player1</div>
+        <div>(X)</div>
+      </div>
+      <div class="game-body">
+        <header>TIC TAC TOE</header>
+        <div class="resultBoard">
+          <div class="roundBoard" id="test"></div>
+          <div class="winning"></div>
         </div>
         
-        <div class="secondrow">
-          <button class="cell" data-row="1" data-column="0" value=""></button>
-          <button class="cell" data-row="1" data-column="1" value=""></button>
-          <button class="cell" data-row="1" data-column="2" value=""></button>
-        </div>
+        
+        <div id="board">
+          <div class="rows firstrow">
+            <button class="cell" data-row="0" data-column="0" value=""></button>
+            <button class="cell" data-row="0" data-column="1" value=""></button>
+            <button class="cell" data-row="0" data-column="2" value=""></button>
+          </div>
+          
+          <div class="rows secondrow">
+            <button class="cell" data-row="1" data-column="0" value=""></button>
+            <button class="cell" data-row="1" data-column="1" value=""></button>
+            <button class="cell" data-row="1" data-column="2" value=""></button>
+          </div>
 
-        <div class="thirdrow">
-          <button class="cell" data-row="2" data-column="0" value=""></button>
-          <button class="cell" data-row="2" data-column="1" value=""></button>
-          <button class="cell" data-row="2" data-column="2" value=""></button>
+          <div class="rows thirdrow">
+            <button class="cell" data-row="2" data-column="0" value=""></button>
+            <button class="cell" data-row="2" data-column="1" value=""></button>
+            <button class="cell" data-row="2" data-column="2" value=""></button>
+          </div>
         </div>
+        <button data-modal-target="#playerInfo" class="start ">New Game</button>
       </div>
-      
-      <div class="winning"></div>
+      <div class="boxDisplay playerTwoDisplay">
+        <div class="playerTwoName">Player2</div>
+        <div>(O)</div>
+      </div>
     </div>
     <div id="overlay" class="overlay"></div>
   </div>

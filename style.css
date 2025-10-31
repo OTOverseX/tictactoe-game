@@ -1,5 +1,6 @@
 body{
     box-sizing: border-box;
+    
 }
 
 *, *::after, *::before
@@ -7,8 +8,40 @@ body{
     box-sizing: inherit;
 }
 
-.cell{padding: 20px; width: 50px;}
+body
+{
 
+	display: flex;
+	justify-content: center;
+	min-height: 70vh;
+	align-items: center;
+    background-color: #f0f0f0;
+	font-family: "Permanent Marker", cursive;
+
+}
+
+.cell{padding: 20px; width: 50px; font-size: 30px;}
+
+.wrapper{
+    display: flex;
+    gap: 100px;
+    
+}
+
+.wrapper > div {
+    flex: 1 1 auto;
+}
+
+.boxDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 32px;
+    align-self: center;
+    width: 200px;
+    font-family: "Permanent Marker", cursive;
+
+}
 .playerInfo{
     position: fixed;
     top: 50%;
@@ -72,7 +105,7 @@ form input
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    font-family: "Oswald", sans-serif;
+    
 }
 
 form input:focus
@@ -92,9 +125,69 @@ form input:focus
     padding: 10px 20px;
     font-size: 20px;
     border: none;
-    background-color:  #0284C7;
+    background-color:rgba(0, 0, 34, 0.94);;
     color: #fff;
     cursor: pointer;
     border-radius: 10px;
-    font-family: "Oswald", sans-serif;
+    
+}
+
+.game-body{
+    display :flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 20px;
+}
+
+#board{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #e2e8f0;
+    padding: 10px;
+    
+}
+
+#board > div{
+    
+    display: flex;
+    gap: 10px;
+    
+}
+
+.rows button{
+    flex: 1;
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+}
+
+.start{
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color:rgba(0, 0, 34, 0.94);
+}
+
+.resultBoard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 70px;
+    background-color: #e2e8f0;
+    font-size: 20px;
+}
+
+header{
+    font-size: 32px;
+    text-align: center;
+}
+
+.info input{
+    font-family: "Permanent Marker", cursive;
+    font-size: 20px;
 }
